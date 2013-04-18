@@ -23,7 +23,6 @@ import com.google.android.location.database.WlanMap;
 import com.google.android.location.debug.OverlayLocationNotifier;
 import com.google.android.location.debug.OverlayLocationServer;
 import com.google.android.location.provider.GeocodeProvider;
-import com.google.android.location.provider.NetworkLocationProvider;
 import com.google.android.location.provider.NetworkLocationProviderBase;
 import com.google.android.location.provider.NetworkLocationProviderV2;
 import com.google.android.location.source.AppleWlanLocationSource;
