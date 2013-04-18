@@ -69,16 +69,6 @@
             android:name="com.google.android.location.ConfirmAlertActivity"
             android:excludeFromRecents="true"
             android:theme="@style/AlertThemeSelector" />
-        <activity
-            android:name="com.google.android.location.map.Activity"
-            android:label="NetworkLocation TestApp" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
