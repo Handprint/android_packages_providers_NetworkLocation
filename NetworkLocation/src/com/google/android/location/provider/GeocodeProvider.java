@@ -9,8 +9,8 @@ import android.util.Log;
 
 import com.google.android.location.source.GeocodeDataSource;
 
-public class GeocodeProvider extends
-		com.android.location.provider.GeocodeProvider {
+public class GeocodeProvider /*extends
+		com.android.location.provider.GeocodeProvider*/ {
 	private static final String TAG = "LocationGeocodeProvider";
 	private final GeocodeDataSource source;
 
