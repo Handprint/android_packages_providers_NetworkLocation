@@ -4,7 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.location.Address;
-import android.location.GeocoderParams;
+//import android.location.GeocoderParams;
 import android.util.Log;
 
 import com.google.android.location.source.GeocodeDataSource;
@@ -21,7 +21,7 @@ public class GeocodeProvider extends
 	@Override
 	public String onGetFromLocation(final double latitude,
 			final double longitude, final int maxResults,
-			final GeocoderParams params, final List<Address> addrs) {
+			final Object /*GeocoderParams*/ params, final List<Address> addrs) {
 		source.addAdressesToListForLocation(latitude, longitude,
 				params.getLocale(), addrs);
 		if (addrs.size() > 0) {
@@ -35,7 +35,7 @@ public class GeocodeProvider extends
 	public String onGetFromLocationName(final String locationName,
 			final double lowerLeftLatitude, final double lowerLeftLongitude,
 			final double upperRightLatitude, final double upperRightLongitude,
-			final int maxResults, final GeocoderParams params,
+			final int maxResults, final Object /*GeocoderParams*/ params,
 			final List<Address> addrs) {
 		Log.w(TAG,
 				"GeocodeProvider not yet implemented. The application may not work.");
