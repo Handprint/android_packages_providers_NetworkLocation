@@ -72,12 +72,20 @@ public class NetworkLocationProviderV2 extends LocationProviderBase implements
 			final Bundle b = new Bundle();
 			b.putString("networkLocationType", location.getProvider());
 			location.setExtras(b);
-			location.makeComplete();
+			makeComplete(location);
 			location = LocationDataProvider.Stub.renameSource(location,
 					IDENTIFIER);
 			reportLocation(location);
 		}
 	}
+	
+	private void makeComplete(Location location) {
+        if (location.getProvider() == null) location.setProvider("?");
+        if (!location.hasAccuracy()) {
+            location.setAccuracy(100.0f);
+        }
+        if (location.getTime() == 0) location.setTime(System.currentTimeMillis());
+    }
 
 	@Override
 	public void onProviderDisabled(final String provider) {
