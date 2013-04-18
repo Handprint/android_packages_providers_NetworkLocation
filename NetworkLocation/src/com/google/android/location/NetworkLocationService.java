@@ -147,7 +147,8 @@ public class NetworkLocationService extends Service {
 				.equalsIgnoreCase("com.google.android.location.GeocodeProvider")
 				|| action
 						.equalsIgnoreCase("com.android.location.service.GeocodeProvider")) {
-			return geoprovider.getBinder();
+			// Workaround until providing GeocodeProvider
+//			return geoprovider.getBinder();
 		} else if (action
 				.equalsIgnoreCase("com.google.android.location.internal.ANDROID_NLP")) {
 			Log.w(TAG, "somebody wants internal stuff o.O");
