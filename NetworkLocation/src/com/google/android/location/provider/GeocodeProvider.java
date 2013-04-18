@@ -17,11 +17,11 @@ public class GeocodeProvider extends
 	public GeocodeProvider(final Context context, final GeocodeDataSource source) {
 		this.source = source;
 	}
-
+/*
 	@Override
 	public String onGetFromLocation(final double latitude,
 			final double longitude, final int maxResults,
-			final Object /*GeocoderParams*/ params, final List<Address> addrs) {
+			final GeocoderParams params, final List<Address> addrs) {
 		source.addAdressesToListForLocation(latitude, longitude,
 				params.getLocale(), addrs);
 		if (addrs.size() > 0) {
@@ -35,11 +35,11 @@ public class GeocodeProvider extends
 	public String onGetFromLocationName(final String locationName,
 			final double lowerLeftLatitude, final double lowerLeftLongitude,
 			final double upperRightLatitude, final double upperRightLongitude,
-			final int maxResults, final Object /*GeocoderParams*/ params,
+			final int maxResults, final GeocoderParams params,
 			final List<Address> addrs) {
 		Log.w(TAG,
 				"GeocodeProvider not yet implemented. The application may not work.");
 		return null;
 	}
-
+*/
 }
