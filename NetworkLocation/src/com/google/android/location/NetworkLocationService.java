@@ -23,7 +23,6 @@ import com.google.android.location.database.WlanMap;
 import com.google.android.location.debug.OverlayLocationNotifier;
 import com.google.android.location.debug.OverlayLocationServer;
 import com.google.android.location.provider.GeocodeProvider;
-import com.google.android.location.provider.NetworkLocationProvider;
 import com.google.android.location.provider.NetworkLocationProviderBase;
 import com.google.android.location.provider.NetworkLocationProviderV2;
 import com.google.android.location.source.AppleWlanLocationSource;
@@ -169,11 +168,7 @@ public class NetworkLocationService extends Service {
 		}
 		wlanMap = new WlanMap(DatabaseHelper.getInstance(this));
 		gsmMap = new CellMap(DatabaseHelper.getInstance(this));
-		if (Build.VERSION.SDK_INT < 17) {
-			nlprovider = new NetworkLocationProvider();
-		} else {
-			nlprovider = new NetworkLocationProviderV2();
-		}
+		nlprovider = new NetworkLocationProviderV2();
 		data = new LocationData(nlprovider, this);
 		data.addProvider(new CellLocationData(this, gsmMap,
 				new DBFileCellLocationSource(new File(Environment
