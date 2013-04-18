@@ -85,6 +85,7 @@ public class NetworkLocationProviderV2 extends LocationProviderBase implements
             location.setAccuracy(100.0f);
         }
         if (location.getTime() == 0) location.setTime(System.currentTimeMillis());
+        if (location.getElapsedRealtimeNanos() == 0) location.setElapsedRealtimeNanos(SystemClock.elapsedRealtimeNanos());
     }
 
 	@Override
