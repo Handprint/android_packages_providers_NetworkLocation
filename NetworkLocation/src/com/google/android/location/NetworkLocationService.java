@@ -169,11 +169,7 @@ public class NetworkLocationService extends Service {
 		}
 		wlanMap = new WlanMap(DatabaseHelper.getInstance(this));
 		gsmMap = new CellMap(DatabaseHelper.getInstance(this));
-		if (Build.VERSION.SDK_INT < 17) {
-			nlprovider = new NetworkLocationProvider();
-		} else {
-			nlprovider = new NetworkLocationProviderV2();
-		}
+		nlprovider = new NetworkLocationProviderV2();
 		data = new LocationData(nlprovider, this);
 		data.addProvider(new CellLocationData(this, gsmMap,
 				new DBFileCellLocationSource(new File(Environment

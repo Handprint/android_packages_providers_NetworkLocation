@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.google.android.location"
     android:versionCode="1008"
+    coreApp="true"
     android:versionName="1.0.8" >
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="17"
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INSTALL_LOCATION_PROVIDER" />
